@@ -39,38 +39,6 @@ class _LogsPageState extends State<LogsPage> {
           ),
         ],
       ),
-//      body: Container(
-//        decoration: BoxDecoration(
-//          image: DecorationImage(
-//            image: AssetImage(AssetsImages.farm),
-//            fit: BoxFit.cover,
-//          ),
-//        ),
-//        width: MediaQuery.of(context).size.width,
-//        height: MediaQuery.of(context).size.height,
-//        child: Column(
-//          children: <Widget>[
-//            buttonBar(),
-//            Padding(
-//              padding: const EdgeInsets.only(
-//                left: 20,
-//                right: 20,
-//              ),
-//              child: Card(
-//                shape: RoundedRectangleBorder(
-//                  borderRadius: BorderRadius.circular(10)
-//                ),
-//                child: Container(
-//                  width: MediaQuery.of(context).size.width,
-//                  height: MediaQuery.of(context).size.height * 0.5,
-//                  padding: EdgeInsets.all(8),
-//                  child: chartWidget(),
-//                ),
-//              ),
-//            ),
-//          ],
-//        ),
-//      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

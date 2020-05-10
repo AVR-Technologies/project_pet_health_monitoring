@@ -1,5 +1,5 @@
 class AssetsImages {
-  static const String farm = 'farm.jpg';
+  static const String farm = 'assets/images/farm.jpg';
 }
 class Urls {
   static const String url               = 'http://localhost:80/project_pet_health_monitoring/';

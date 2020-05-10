@@ -78,7 +78,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
 									mainAxisAlignment: MainAxisAlignment.start,
 									children: <Widget>[
 										Text(pet.collarId, style: Theme.of(context).textTheme.headline6,),
-//										Text('Temperature: ${pet.temperature}', style: Theme.of(context).textTheme.subtitle1.copyWith(fontSize: 14),),
 										Text('Breed: ${pet.breed}', style: Theme.of(context).textTheme.subtitle2.copyWith(fontSize: 14,),)
 									],
 								),
@@ -90,67 +89,13 @@ class _DashBoardPageState extends State<DashBoardPage> {
 									backgroundColor: Colors.grey[600],
 									foregroundColor: Colors.white,
 									child: Text(pet.age),),
-							)
+							),
 						],
 					),
 				),
 			),
 		);
 	}
-	
-//	Widget petCard(Pet pet) {
-//		return Card(
-//			shape: RoundedRectangleBorder(
-//				borderRadius: BorderRadius.all(
-//					Radius.circular(10),
-//				),
-//			),
-//			elevation: 1,
-//			child: InkWell(
-//				onTap: (){
-//					Navigator.push(context, MaterialPageRoute(builder: (context) => LogsPage()));
-//				},
-//				child: Container(
-//					width: 240,
-//					child: Column(
-//						mainAxisSize: MainAxisSize.min,
-//						children: <Widget>[
-//							ListTile(
-//								title: Text(pet.collarId,
-//									textAlign: TextAlign.center,
-//									style: TextStyle(
-//										fontSize: 24,
-//										color: Colors.indigo[700],
-//										fontWeight: FontWeight.bold,
-//									),
-//								),
-//							),
-//							SizedBox(height: 10,),
-//							Center( child: Icon(Icons.pets, size: 120, color: Colors.grey[700]),),
-//							SizedBox(height: 10,),
-//							Divider(height: 1,),
-//							ListTile(
-//								leading: CircleAvatar(
-//									backgroundColor: Colors.pink[200],
-//									foregroundColor: Colors.white,
-//									child: Text(pet.age),),
-//								title: Text('Temperature: ' + pet.temperature +'°C',
-//									style: TextStyle(
-//										color: Colors.grey[700],
-//									),
-//								),
-//								subtitle: Text('Breed: ' + pet.breed,
-//									style: TextStyle(
-//										color: Colors.grey[500],
-//									),
-//								),
-//							),
-//						],
-//					),
-//				),
-//			),
-//		);
-//	}
 	refreshPetList() {
     PetsCardHandler().getList().then((result) {
 			if(result['success']){

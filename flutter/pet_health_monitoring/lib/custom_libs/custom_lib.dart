@@ -155,11 +155,11 @@ class OutlineCard extends StatelessWidget{
       margin: EdgeInsets.all(margin ?? 8),
       padding: EdgeInsets.all(padding ?? 8),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-          border: Border.all(
-              color: borderColor ?? Colors.grey[400],
-              width: borderWidth ?? 2
-          )
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        border: Border.all(
+          color: borderColor ?? Colors.grey[400],
+          width: borderWidth ?? 2,
+        ),
       ),
       child: child,
     );
