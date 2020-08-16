@@ -6,10 +6,13 @@ import 'package:pet_health_monitoring/custom_libs/custom_lib.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import '../strings.dart';
 import 'add_pet_page.dart';
-//compiling for web is failed hence in package
-// /C:/Devolopment/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_charts-17.4.46/lib/src/circular_chart/utils/helper.d
-//art:22:47:
-// is commented
+//[   +6 ms] Target dart2js failed: Exception:
+//
+///C:/Devolopment/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_charts-17.4.46/lib/src/common/user_interaction/tooltip.dart:345:52:
+//           Error: Constant evaluation error:
+//             void hide() => _painter._calculateLocation(const Offset(null, null));
+//
+// only const is commented
 class LogsPage extends StatefulWidget{
   final String id;
   const LogsPage({Key key, this.id}) : super(key: key);
