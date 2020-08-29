@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../strings.dart';
+
 class InputField extends StatelessWidget{
   final double padding;
   final TextEditingController controller;
@@ -54,7 +56,7 @@ class HeaderTile extends StatelessWidget{
     );
   }
 }
-class UnElevatedButton extends StatelessWidget{
+class FlatButtonWithPadding extends StatelessWidget{
   final VoidCallback onPressed;
   final Color textColor;
   final Color color;
@@ -66,7 +68,7 @@ class UnElevatedButton extends StatelessWidget{
   final double paddingBottom;
   final double fontSize;
   final FontWeight fontWeight;
-  UnElevatedButton({Key key, this.onPressed, this.textColor, this.color, @required this.title, this.borderRadius, this.paddingLeft, this.paddingRight, this.paddingTop, this.paddingBottom, this.fontSize, this.fontWeight}) : super(key: key);
+  FlatButtonWithPadding({Key key, this.onPressed, this.textColor, this.color, @required this.title, this.borderRadius, this.paddingLeft, this.paddingRight, this.paddingTop, this.paddingBottom, this.fontSize, this.fontWeight}) : super(key: key);
   @override Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
@@ -86,7 +88,7 @@ class UnElevatedButton extends StatelessWidget{
     );
   }
 }
-class ElevatedButton extends StatelessWidget{
+class ButtonWithPadding extends StatelessWidget{
   final VoidCallback onPressed;
   final Color textColor;
   final Color color;
@@ -98,7 +100,7 @@ class ElevatedButton extends StatelessWidget{
   final double paddingBottom;
   final double fontSize;
   final FontWeight fontWeight;
-  ElevatedButton({Key key,@required this.onPressed, this.textColor, this.color, @required this.title, this.borderRadius, this.paddingLeft, this.paddingRight, this.paddingTop, this.paddingBottom, this.fontSize, this.fontWeight}) : super(key: key);
+  ButtonWithPadding({Key key,@required this.onPressed, this.textColor, this.color, @required this.title, this.borderRadius, this.paddingLeft, this.paddingRight, this.paddingTop, this.paddingBottom, this.fontSize, this.fontWeight}) : super(key: key);
   @override Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
@@ -162,6 +164,25 @@ class OutlineCard extends StatelessWidget{
         ),
       ),
       child: child,
+    );
+  }
+
+}
+class FormUi extends StatelessWidget{
+  final Widget child;
+  final Key scaffoldKey;
+  const FormUi({this.scaffoldKey, this.child}) : super();
+  @override Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AssetsImages.farm),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: CenterCard(child: child,),),
     );
   }
 
