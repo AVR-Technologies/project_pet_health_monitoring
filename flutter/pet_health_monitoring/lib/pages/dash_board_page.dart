@@ -74,7 +74,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
 							padding: const EdgeInsets.all(10),
 							child: Column(
 								crossAxisAlignment: CrossAxisAlignment.start,
-								mainAxisAlignment: MainAxisAlignment.start,
 								children: <Widget>[
 									Text(pet.collarId, style: Theme.of(context).textTheme.headline6,),
 									Text('Breed: ' + pet.breed, style: Theme.of(context).textTheme.bodyText2,)

@@ -81,6 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
   register() {
+
     if(usernameController.text.isNotEmpty && emailController.text.isNotEmpty && mobileNoController.text.isNotEmpty && passwordController.text.isNotEmpty){
       RegisterHandler
           .register(
@@ -89,9 +90,9 @@ class _RegisterPageState extends State<RegisterPage> {
             mobile: mobileNoController.text,
             password: passwordController.text,)
           .then((dynamic result) {
-        if(result['success']){ goToDashBoardPage();}
-        else{ displaySnackBar(result['message']); }
-      });
+            if(result['success']){ goToDashBoardPage();}
+            else{ displaySnackBar(result['message']); }
+          });
     }else{
       displaySnackBar('All fields necessary');
     }

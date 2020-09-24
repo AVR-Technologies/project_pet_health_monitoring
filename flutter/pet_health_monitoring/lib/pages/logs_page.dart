@@ -91,9 +91,9 @@ class _LogsPageState extends State<LogsPage> {
       child: Container(
         height: MediaQuery.of(context).size.height*0.8,
         child: SfCartesianChart(
+          title: ChartTitle(text: 'Temperature log'),
           primaryXAxis: DateTimeAxis( title: AxisTitle(text: 'Time')),
           primaryYAxis: NumericAxis( title: AxisTitle(text: 'temperature (°C)')),
-          title: ChartTitle(text: 'Temperature log'),
           tooltipBehavior: TooltipBehavior(
             enable: true,
             tooltipPosition: TooltipPosition.pointer,
@@ -106,6 +106,7 @@ class _LogsPageState extends State<LogsPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Temp: ' + (point as CartesianChartPoint<dynamic>).y.toString() + ' °C'),
+                      //Text((point as CartesianChartPoint<dynamic>).x.toString()),
                       Text('Time: ' + DateFormat("hh:mm:ss").format((point as CartesianChartPoint<dynamic>).x) ),
                       Text('Date: ' + DateFormat("dd/MM/yyyy").format((point as CartesianChartPoint<dynamic>).x) ),
                     ],
@@ -123,8 +124,8 @@ class _LogsPageState extends State<LogsPage> {
               name: 'Temperature',
               enableTooltip: true,
               dataSource: data,
-              xValueMapper: (TemperatureLogs logs, _) => logs.time,
-              yValueMapper: (TemperatureLogs logs, _) => logs.temperature,
+              xValueMapper: (TemperatureLogs log, _) => log.time,
+              yValueMapper: (TemperatureLogs log, _) => log.temperature,
               dataLabelSettings: DataLabelSettings(isVisible: true),
               markerSettings: MarkerSettings(isVisible: true),
             ),
@@ -184,6 +185,6 @@ class TemperatureLogs {
   TemperatureLogs.fromDynamic(dynamic map) {
     this.temperature = int.parse(map['temperature']);
     //this.time = /*DateFormat("dd/MM/yyyy HH:mm:ss")*/DateTime.parse(map['time']);//2020-02-07 11:57:01
-    this.time = DateFormat("dd-MM-yyyy HH:mm:ss").parse(map['time']);
+    this.time = DateFormat("yyyy-MM-dd HH:mm:ss").parse(map['time']);
   }
 }
